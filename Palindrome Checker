@@ -1,0 +1,28 @@
+function palindrome(str) {
+
+  let newStr = [];
+  for (let i = 0; i < str.length; i++) {
+    if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9')) {
+      newStr.push(str[i].toLowerCase());
+    }
+  }
+
+  let l = newStr.length;
+  let half=Math.floor(l/2);
+  let cnt = 0;
+  if (l % 2 === 0) {
+    for (let i = 0, j = l - 1; i < half, j >= l / 2; i++, j--) {
+      if (newStr[i] === newStr[j]) cnt++;
+    }
+  }
+  if (l % 2 != 0) {
+    for (let i = 0, j = l - 1; i < half, j > l / 2; i++, j--) {
+      if (newStr[i] === newStr[j]) cnt++;
+    }
+  }
+  if(cnt===half) return true;
+  else return false;
+}
+
+
+console.log(palindrome("A man, a plan, a canal. Panama"));
