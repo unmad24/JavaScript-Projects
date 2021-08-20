@@ -1,0 +1,52 @@
+function rot13(str) {
+
+  let l=str.length;
+  let str2='';
+
+  for(let i=0;i<l;i++){
+    if(str[i]=='A') str2+='N';
+    else if(str[i]=='N') str2+='A';
+
+    else if(str[i]=='B') str2+='O';
+    else if(str[i]=='O') str2+='B';
+
+    else if(str[i]=='C') str2+='P';
+    else if(str[i]=='P') str2+='C';
+
+    else if(str[i]=='D') str2+='Q';
+    else if(str[i]=='Q') str2+='D';
+
+    else if(str[i]=='E') str2+='R';
+    else if(str[i]=='R') str2+='E';
+
+    else if(str[i]=='F') str2+='S';
+    else if(str[i]=='S') str2+='F';
+
+    else if(str[i]=='G') str2+='T';
+    else if(str[i]=='T') str2+='G';
+
+    else if(str[i]=='H') str2+='U';
+    else if(str[i]=='U') str2+='H';
+
+    else if(str[i]=='I') str2+='V';
+    else if(str[i]=='V') str2+='I';
+
+    else if(str[i]=='J') str2+='W';
+    else if(str[i]=='W') str2+='J';
+
+    else if(str[i]=='K') str2+='X';
+    else if(str[i]=='X') str2+='K';
+
+    else if(str[i]=='L') str2+='Y';
+    else if(str[i]=='Y') str2+='L';
+
+    else if(str[i]=='M') str2+='Z';
+   else if(str[i]=='Z') str2+='M';
+
+    else str2+=str[i];
+
+  }
+  return str2;
+}
+
+console.log(rot13("SERR PBQR PNZC"));
