@@ -1,0 +1,60 @@
+function convertToRoman(num) {
+  let arr = [];
+  let j = 10, q;
+  for (let i = 1; num > 0; i++) {
+    q = num % j;
+    arr.push(q);
+    num = num - q;
+    j *= 10;
+  }
+  let l=arr.length;
+  let str='';
+
+  for(let i=l-1;i>=0;i--){
+    if(arr[i]>1000){
+      for(let j=1;j<=arr[i]/1000;j++){
+        str+='M';
+      }
+    }
+    else{
+      if(arr[i]==1) str+='I';
+      if(arr[i]==2) str+='II';
+      if(arr[i]==3) str+='III';
+      if(arr[i]==4) str+='IV';
+      if(arr[i]==5) str+='V';
+      if(arr[i]==6) str+='VI';
+      if(arr[i]==7) str+='VII';
+      if(arr[i]==8) str+='VIII';
+      if(arr[i]==9) str+='IX';
+
+      if(arr[i]==10) str+='X';
+      if(arr[i]==20) str+='XX';
+      if(arr[i]==30) str+='XXX';
+      if(arr[i]==40) str+='XL';
+      if(arr[i]==50) str+='L';
+      if(arr[i]==60) str+='LX';
+      if(arr[i]==70) str+='LXX';
+      if(arr[i]==80) str+='LXXX';
+      if(arr[i]==90) str+='XC';
+
+      if(arr[i]==100) str+='C';
+      if(arr[i]==200) str+='CC';
+      if(arr[i]==300) str+='CCC';
+      if(arr[i]==400) str+='CD';
+      if(arr[i]==500) str+='D';
+      if(arr[i]==600) str+='DC';
+      if(arr[i]==700) str+='DCC';
+      if(arr[i]==800) str+='DCCC';
+      if(arr[i]==900) str+='CM';
+      if(arr[i]==1000) str+='M';
+
+    }
+  }
+
+  // console.log(arr);
+  // console.log(str);
+  return str;
+
+}
+
+convertToRoman(3346);
