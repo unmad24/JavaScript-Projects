@@ -1,0 +1,42 @@
+function telephoneCheck(str) {
+
+  let l = str.length, cnt;
+
+  for (let i = 0; i < l; i++) {
+    if (str[i] >= '0' && str[i] <= '9' || str[i] == '-' || str[i] == ' ' || str[i] == "(" || str[i] == ")") {
+      cnt = 1;
+    }
+    else {
+      cnt = 0;
+      break;
+    }
+  }
+
+  if (l == 10 && cnt == 1) return true;
+  if (l == 14 && str[0] != '1') {
+    return false;
+  }
+  if (l == 16 && str[0] != '1') {
+    return false;
+  }
+
+  if (l >= 14) {
+    if (str[1] == ' ' && str[5] == ' ' && str[9] == ' ') return true;
+    if (str[1] == '(' && str[5] == ')' && str[9] == ' ') return true;
+    if (str[1] == ' ' && str[2] == '(' && str[6] == ')' && str[7] == ' ' && str[11] == '-') return true;
+    if (str[1] == ' ' && str[5] == '-' && str[9] == '-') return true;
+    if (str[1] == '(' && str[5] == ')' && str[9] == '-') return true;
+  }
+  else if (l == 13) {
+    if (str[0] == '(' && str[4] == ')' && str[8] == '-') return true;
+  }
+  else if (l == 12) {
+    if (str[3] == '-' && str[7] == '-') return true;
+  }
+  else if (l >= 13 && str[0] !== 1) return false;
+
+  return false;
+
+}
+
+console.log(telephoneCheck("1(555)555 5555"));
